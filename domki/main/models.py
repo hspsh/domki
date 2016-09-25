@@ -4,7 +4,7 @@ from django.utils.translation import ugettext as _
 
 
 # Create your models here.
-class Home(models.Models):
+class Home(models.Model):
     APARTMENT_TYPES = (
         (1, _("Studio")),
         (2, _("Apartment")),
@@ -42,7 +42,7 @@ class Home(models.Models):
     # TODO: do some auto counting magic https://www.stavros.io/posts/how-replace-django-model-field-property/
     # ROOM COUNTS
     living_rooms = models.PositiveIntegerField(blank=False)
-    bedrooms = models.PositiveIntegerField(lank=False)
+    bedrooms = models.PositiveIntegerField(blank=False)
     bathrooms = models.PositiveIntegerField(blank=False)
     toilets = models.PositiveIntegerField(blank=False)
     kitchens = models.PositiveIntegerField(blank=False)
@@ -60,14 +60,14 @@ class Home(models.Models):
     guests_overnight = models.BooleanField(defaut=False)
 
 
-class Room(models.Models):
+class Room(models.Model):
     SHAPES = (
         (0, _("Square")),
         (1, _("Rectangle")),
         (2, _("Other"))
     )
     home = models.ForeignKey(Home, related_name="homes")
-    area_in_sq_m = models.PositiveIntegerField(decimal_places=2, blank=False)
+    area_in_sq_m = models.PositiveIntegerField(blank=False)
     shape = models.CharField(choices=SHAPES, blank=False)
     angled_ceiling = models.BooleanField(default=False)
     windowless = models.BooleanField(defaut=False)
@@ -84,7 +84,7 @@ class LivingRoom(Room):
 class Bathroom(Room):
     shower = models.BooleanField(default=False)
     bath = models.BooleanField(default=False)
-    washing_machine = models.BooleanField(default=False) # TODO: w sumie to dlaczego by nie w kuchni/garażu...
+    washing_machine = models.BooleanField(default=False)  # TODO: w sumie to dlaczego by nie w kuchni/garażu...
     dryer = models.BooleanField(default=False)
 
 
@@ -119,7 +119,7 @@ class User(AbstractUser):
     agency_employee = models.BooleanField(default=False)
 
 
-class Agency(models.Models):
+class Agency(models.Model):
     city = models.CharField(max_length=100, blank=False)
     street = models.CharField(max_length=100, blank=False)
     postal_code = models.CharField(max_length=10, blank=False)
@@ -127,11 +127,12 @@ class Agency(models.Models):
     apartment_number = models.DecimalField(max_digits=10, blank=True)
 
 
-class Review(models.Models):
+class Review(models.Model):
     user = models.ForeignKey(User)
     rating = models.PositiveIntegerField()
     review_text = models.TextField()
 
-class Image(models.Models):
+
+class Image(models.Model):
     room = models.ForeignKey(Room)
     title = models.ImageField()  # TODO: add arguments
