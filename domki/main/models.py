@@ -72,6 +72,9 @@ class Room(models.Model):
     angled_ceiling = models.BooleanField(default=False)
     windowless = models.BooleanField(defaut=False)
 
+    class Meta:
+        abstract = True
+
 
 class Bedroom(Room):
     bed = models.BooleanField(default=False)
