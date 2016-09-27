@@ -14,7 +14,7 @@ class Home(models.Model):
         (6, _("Shared apartment")),
     )
 
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, related_name="homes")
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, related_name="homes")
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     # TODO: do some magic update after on new Review
@@ -72,9 +72,6 @@ class Room(models.Model):
     angled_ceiling = models.BooleanField(default=False)
     windowless = models.BooleanField(defaut=False)
 
-    class Meta:
-        abstract = True
-
 
 class Bedroom(Room):
     bed = models.BooleanField(default=False)
@@ -113,7 +110,7 @@ class Garage(Room):
     bays = models.CharField(choices=BAYS, blank=False)
 
 
-class User(AbstractUser):
+class User(AbstractBaseUser):
     city = models.CharField(max_length=100, blank=False)
     street = models.CharField(max_length=100, blank=False)
     postal_code = models.CharField(max_length=10, blank=False)
