@@ -1,8 +1,7 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-	    <meta name="description" content="No fluff apartments">
-	    <meta name="keywords" content="">
 	    <title>No Fluff Apartments</title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <!--Import Google Icon Font-->
@@ -11,27 +10,68 @@
 	  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
         <!--Import material icons-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Link custom css -->
+        <link rel="stylesheet" href="styles/style.css">
+
+        <!-- BOTH LINKS BELOW NEED TO BE MOVED TO STATIC AFTER VIEWS ARE LINKED-->
+        <!-- AND ADD {% load staticfiles %} TO THE TOP -->
+
+        <!-- Link to minified jQuery library-->
+        <script type="text/javascript" src="js/jquery-3.1.0.min.js"> </script>
+        <!-- Link to customized jS script-->
+        <script type="text/javascript" src="js/script.js"> </script>
 	</head>
+
 	<body>
+        <!-- Navigation bar with options dependent on device size-->
 		<div>
 		    <nav>
                 <div class="nav-wrapper cyan accent-4">
                     <a href="" class="brand-logo center ">No Fluff Homes</a>
+
+                    <!-- Large device version-->
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="">Login</a></li>
                         <li><a href="">Messages<span class="new badge grey">4</span></a></li>
                         <li><a href="">Register</a></li>
                     </ul>
+
+                    <!-- Med and small device version -->
+                    <ul id="nav-mobile" class="right hide-on-lar">
+                        <!-- Size of menu icon adjusted through style, font-size property -->
+                        <li><a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="font-size: 2em">menu</i></a></li>
+                    </ul>
                 </div>
             </nav>
 		</div>
+
+        <!-- Side-navigation menu for mid and small devices-->
+        <ul id="slide-out" class="side-nav">
+            <li></li>
+            <li><a href="#!"><i class="material-icons">menu</i>What do you want to do?</a></li>
+            <li><a href="#!">Log in</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Register</a></li>
+            <li><a class="waves-effect" href="#!">Messages<span class="new badge green">4</span></a></li>
+        </ul>
+
+        <!-- Main body-->
 		<div class="container">
+
+            <!-- Search input field -->
 	        <div class="row">
-                <div class="col s12 m10 l10 offset-l1 offset-m1 card-panel cyan accent-4">
-                    <p class="center-align"><span class="flow-text white-text text-darken-2"><i class="material-icons">search</i> Search bar</span>
-                    </p>
-                </div>
+                <form class="col s10 offset-s1">
+                    <div class="row">
+                        <div class="input-field">
+                            <i class="material-icons prefix" style="font-size: 3em;">search</i>
+                            <input id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">What are you looking for?</label>
+                        </div>
+                    </div>
+                </form>
             </div>
+
+            <!-- Search cataegories -->
             <div class="row">
                 <div class="col s12 m10 l10 offset-l1 offset-m1 card-panel cyan accent-4">
                     <p class="center-align"><span class="flow-text white-text text-darken-2">Categories</span></p>
@@ -85,6 +125,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Footer -->
         <footer class="page-footer cyan darken-3">
             <div class="container">
                 <div class="row">
@@ -107,6 +149,7 @@
                 </div>
             </div>
         </footer>
+
 	</body>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
