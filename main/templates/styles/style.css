@@ -1,13 +1,51 @@
+/* FORM INPUTS*/
 /* label color */
 .input-field label {
-    color: #000;
+    /* cyan accent-4 is #00b8d4*/
+    color: #00b8d4;
+    font-weight: bold;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
-    color: #000;
+    /* amber accent-4 is #ffab00 */   
+    color: #ffab00;
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
+    /* amber accent-4 is #ffab00 */
+    border-bottom: 1px solid #ffab00;
+    box-shadow: 0 1px 0 0 #ffab00;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+    /* amber accent-4 is #ffab00 */
+     color: #ffab00;
+}
+
+/* BLOCKQUOTE INSTRUCTIONS */
+blockquote{
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left: 5px solid #ffab00; /* Just change the color value and that's it*/
+}
+
+/* SEARCH BAR */
+/* search bar placeholder style for different webkits */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: white;
+    text-align: center;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: white;
+   opacity:  1;
+   text-align: center;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: white;
+   opacity:  1;
+   text-align: center;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: white;
+   text-align: center;
 }

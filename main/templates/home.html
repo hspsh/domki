@@ -13,13 +13,9 @@
         <!-- Link custom css -->
         <link rel="stylesheet" href="styles/style.css">
 
-        <!-- BOTH LINKS BELOW NEED TO BE MOVED TO STATIC AFTER VIEWS ARE LINKED-->
+        <!-- CSS AND JS LINKS NEED TO BE MOVED TO STATIC AFTER VIEWS ARE LINKED-->
         <!-- AND ADD {% load staticfiles %} TO THE TOP -->
 
-        <!-- Link to minified jQuery library-->
-        <script type="text/javascript" src="js/jquery-3.1.0.min.js"> </script>
-        <!-- Link to customized jS script-->
-        <script type="text/javascript" src="js/script.js"> </script>
 	</head>
 
 	<body>
@@ -52,14 +48,14 @@
             <li><a href="#!">Log in</a></li>
             <li><div class="divider"></div></li>
             <li><a class="subheader">Register</a></li>
-            <li><a class="waves-effect" href="#!">Messages<span class="new badge green">4</span></a></li>
+            <li><a class="waves-effect" href="#!">Messages<span class="new badge cyan accent-4">4</span></a></li>
         </ul>
 
         <!-- Main body-->
 		<div class="container">
 
-            <!-- Search input field -->
-	        <div class="row">
+            <!-- Search input field ver 1
+	        <div class="row" style="margin-top: 4em;">
                 <form class="col s10 offset-s1">
                     <div class="row">
                         <div class="input-field">
@@ -70,14 +66,103 @@
                     </div>
                 </form>
             </div>
+            -->
 
-            <!-- Search cataegories -->
+            <!-- Search input field ver 2-->
+            <div class="row" style="margin-top: 2em;">
+                <nav>
+                    <div class="nav-wrapper">
+                        <form>
+                            <div class="input-field amber accent-4">
+                                <input id="search" placeholder="What are you looking for?" type="search" required>
+                                <label for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Search categories -->
             <div class="row">
-                <div class="col s12 m10 l10 offset-l1 offset-m1 card-panel cyan accent-4">
-                    <p class="center-align"><span class="flow-text white-text text-darken-2">Categories</span></p>
+                <div class="col s12 m10 l10 offset-l1 offset-m1">
+                    <ul class="collapsible" data-collapsible="expandable">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">label_outline</i>Category</div>
+                            <div class="collapsible-body">
+                                <form action="#">
+                                    <p>
+                                        <input type="checkbox" id="category_1" />
+                                        <label for="category_1">Apartment</label>
+                                        <br/>
+                                        <input type="checkbox" id="category_2" />
+                                        <label for="category_2">House</label>
+                                        <br/>
+                                        <input type="checkbox" id="category_3" />
+                                        <label for="category_3">Room</label>
+                                        <br/>
+                                        <input type="checkbox" id="category_4" />
+                                        <label for="category_4">Loft</label>
+                                    </p>
+                                </form>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">people</i>People</div>
+                            <div class="collapsible-body">
+                                <form action="#">
+                                    <p>
+                                        <input name="group1" type="radio" id="people_1" />
+                                        <label for="people_1">1 person</label>
+                                        <br/>
+                                        <input name="group1" type="radio" id="people_2" />
+                                        <label for="people_2">2 people</label>
+                                        <br/>
+                                        <input name="group1" type="radio" id="people_3" />
+                                        <label for="people_3">3 people</label>
+                                        <br/>
+                                        <input name="group1" type="radio" id="people_4" />
+                                        <label for="people_4">4 or more</label>
+                                        <br/>
+                                    </p>
+                                </form>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">place</i>Location</div>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <input id="city" type="text" class="validate">
+                                    <label for="city" style="text-align: center">City</label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="country" type="text" class="validate">
+                                    <label for="country" style="text-align: center">Country</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">credit_card</i>Monthly cost ($)</div>
+                            <div class="collapsible-body">
+                                <form action="#">
+                                    <p class="range-field">
+                                        <input type="range" id="monthly" min="0" max="100" />
+                                    </p>
+                                </form>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">info</i>Other</div>
+                            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                        </li>
+                      </ul>
                 </div>
             </div>
+
+            <!-- Available apartments display section -->
             <div class="row">
+
+                <!-- Apartments display ver 1 
                 <div class="col s12 m10 l10 offset-l1 offset-m1 card-panel">
                     <blockquote class="flow-text" style="font-size: 1em;">
                     Here's a list of all the homes &amp; appartments for rent. Check out the initial details or click to see more!
@@ -114,12 +199,19 @@
                   </table>
                 </div>
             </div>
+            -->
+
+            <!-- Apartments display ver 2 -->
              <div class="row">
                 <div class="col s12 m10 l10 offset-l1 offset-m1 card-panel">
+                    <blockquote class="flow-text" style="font-size: 1em;">
+                    Here's a list of all the homes &amp; apartments for rent. 
+                    <br/>Check out the initial details and click to see more!
+                    </blockquote>
                     <div class="collection">
                         <a href="#!" class="collection-item">2-bedroom Apartment<span class="badge">9.5/10</span></a>
-                        <a href="#!" class="collection-item">Studio Apartment<span class="new badge red">4</span></a>
-                        <a href="#!" class="collection-item">Waterfront Bachelor Pad<span class="new badge">8</span></a>
+                        <a href="#!" class="collection-item">Studio Apartment<span class="new badge red"></span></a>
+                        <a href="#!" class="collection-item">Waterfront Bachelor Pad<span class="new badge amber accent-4"></span></a>
                         <a href="#!" class="collection-item">Victorian House with Garden<span class="badge">7.8</span></a>
                     </div>
                 </div>
@@ -151,7 +243,10 @@
         </footer>
 
 	</body>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <!-- Link to minified jQuery library-->
+        <script type="text/javascript" src="js/jquery-3.1.0.min.js"> </script>
+        <!-- Import materialize's minified jS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <!-- Link to customized jS script-->
+        <script type="text/javascript" src="js/script.js"> </script>
 </html>
