@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,15 +9,11 @@
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import minimized materialize.css-->
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
         <!--Import material icons-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Link custom css -->
-        <link rel="stylesheet" href="styles/style.css">
-
-        <!-- CSS AND JS LINKS NEED TO BE MOVED TO STATIC AFTER VIEWS ARE LINKED-->
-        <!-- AND ADD {% load staticfiles %} TO THE TOP -->
-
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
 
     <body>
@@ -252,10 +249,10 @@
         </footer>
 
     </body>
-        <!-- Link to minified jQuery library-->
-        <script type="text/javascript" src="js/jquery-3.1.0.min.js"> </script>
-        <!-- Import materialize's minified jS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-        <!-- Link to customized jS script-->
-        <script type="text/javascript" src="js/script.js"> </script>
+    <!-- Link to minified jQuery library-->
+    <script type="text/javascript" src="{% static 'js/jquery-3.1.0.min.js' %}"> </script>
+    <!-- Link to materialize.css javascript (must be linked after jQuery)-->
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"> </script>
+    <!-- Link to customized jS script-->
+    <script type="text/javascript" src="{% static 'js/script.js' %}"> </script>
 </html>

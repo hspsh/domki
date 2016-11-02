@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext as _
 
+"""
+PUTTING EVERYTHING IN COMMENT CAUSE THE CODE BELOW WAS THROWING 30+ ERRORS:
+    main.Bathroom.home: (fields.E304) Reverse accessor for 'Bathroom.home' clashes with reverse accessor for 'Bedroom.home'.
+        HINT: Add or change a related_name argument to the definition for 'Bathroom.home' or 'Bedroom.home'.
+WHEN TRYING TO MAKEMIGRATIONS
 
 # Create your models here.
 class Home(models.Model):
@@ -80,6 +85,7 @@ class Room(models.Model):
 
 
 class Bedroom(Room):
+    szfaka = models.
     bed = models.BooleanField(default=False)
 
 
@@ -142,3 +148,5 @@ class Review(models.Model):
 class Image(models.Model):
     room = models.ForeignKey(Room)
     title = models.ImageField()  # TODO: add arguments
+
+"""
