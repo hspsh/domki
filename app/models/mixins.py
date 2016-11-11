@@ -3,6 +3,9 @@ from django.db import models
 
 
 class Simple(models.Model):
+    """
+    When we use UUID, then the primary key can be unique for all models / objects
+    """
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
