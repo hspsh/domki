@@ -1,8 +1,8 @@
-from app.models.mixins import Simple
+from app.models.mixins import Premises
 from django.db import models
 
 
-class Apartment(Simple):
+class Apartment(Premises):
     """
     Apartment model
     """

@@ -6,3 +6,10 @@ class Simple(models.Model):
 
     class Meta:
         abstract = True
+
+
+class Premises(Simple):
+    rooms = models.PositiveSmallIntegerField('Pokoje')
+
+    class Meta:
+        abstract = True
