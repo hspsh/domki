@@ -1,102 +1,112 @@
+{% load staticfiles %}
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-	    <meta name="description" content="No fluff apartments">
-	    <meta name="keywords" content="">
-	    <title>No Fluff Apartments</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-	    <link rel="stylesheet" href="styles/style.css">
-	  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css"> 
-	</head>
-	<body>
-		<div>
-		  <nav>
-		    <div class="nav-wrapper cyan accent-4">
-		      <a href="#" class="brand-logo center">no fluff apartments</a>
-		    </div>
-		  </nav>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col m12 s12">
-					<h5>PODSTAWOWE INFORMACJE</h5>
-					<span>Autor</span>
-					<span>Data wystawienia</span>
-					<span>Ocena (1/10)</span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col m6 s12">
-					<h5>OPŁATY</h5>
-					<span>Cena za noc</span>
-					<span>Cena za tydzień</span>
-					<span>Cena za miesiąc</span>
-					<span>Cena za rok</span>
-				</div>
-				<div class="col m6 s12">
-					<h5>LOKALIZACJA</h5>
-					<span>Miasto</span>
-					<span>Ulica</span>
-					<span>Nr domu</span>
-					<span>Nr mieszkania</span>
-					<span>Kod pocztowy</span>
-					<span>Piętro</span>
-					<span>Ilość pięter w budynku</span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col m6 s12">
-					<h5>ILOŚĆ POMIESZCZEŃ</h5>
-					<div>Pokój dzienny
-						<span>Kształt pokoju</span>
-					</div>
-					<div>Sypialnia
-						<span>Łóżko</span>
-					</div>
-					<div>Łazienka
-						<span>Prysznic</span>
-						<span>Wanna</span>
-						<span>Pralka</span>
-						<span>Suszarka</span>
-					</div>
-					<div>WC osobno
-					</div>
-					<div>Kuchnia
-						<span>Piekarnik</span>
-						<span>Kuchenka</span>
-						<span>Lodówka</span>
-						<span>Zamrażarka</span>
-					</div>
-					<div>Garaż
-						<span>miejsca parkingowe</span>
-					</div>
-					<div>Przedpokój</div>
-					<div>Garderoba</div>
-					<div>Strych</div>
-					<div>Piwnica</div>
-				</div>
-				<div class="col m6 s12">
-					<h5>ZWIERZĘTA</h5>
-					<span>niedozwolone</span>
-					<span>tylko psy</span>
-					<span>tylko koty</span>
-					<span>tylko psy i koty</span>
-					<span>bez ograniczeń</span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col m6 s12">
-					<h5></h5>
-				</div>
-				<div class="col m6 s12">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col m12 s12">
-				</div>
-			</div>
+    <head>
+        <meta charset="UTF-8">
+        <title>No Fluff Apartments</title>
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import minimized materialize.css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <!--Import material icons-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Link custom css -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
 
-		</div>
-	</body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <body>
+        <!-- Navigation bar with options dependent on device size-->
+        <div>
+            <nav>
+                <div class="nav-wrapper cyan accent-4">
+                    <a href="" class="brand-logo center ">No Fluff Homes</a>
+
+                    <!-- Large device version-->
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="">Login</a></li>
+                        <li><a href="">Messages<span class="new badge grey">4</span></a></li>
+                        <li><a href="">Register</a></li>
+                    </ul>
+
+                    <!-- Med and small device version -->
+                    <ul id="nav-mobile" class="right hide-on-lar">
+                        <!-- Size of menu icon adjusted through style, font-size property -->
+                        <li><a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="font-size: 2em">menu</i></a></li>
+                    </ul>
+                </div>
+            </nav>      
+        </div>
+
+        <!-- Side-navigation menu for mid and small devices-->
+        <ul id="slide-out" class="side-nav">
+            <li></li>
+            <li><a href="#!"><i class="material-icons">menu</i>What do you want to do?</a></li>
+            <li><a href="#!">Log in</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Register</a></li>
+            <li><a class="waves-effect" href="#!">Messages<span class="new badge cyan accent-4">4</span></a></li>
+        </ul>
+
+        <!-- Individual Apartment info -->
+        <div class="col s12 m7">
+		    <h3 class="center-align">Luxury Waterfront Apartment</h3>
+		    <div class="card horizontal">
+			    <div class="card-image">
+			        <img src="{% static "images/nice_apartment-2.jpg" %}">
+			    </div>
+			    <div class="card-stacked">
+			        <div class="card-content">
+			          	<p class="flow-text">ESSENTIALS</p>
+			          	<p>Rating: <i class="tiny material-icons">star</i><i class="tiny material-icons">star</i><i class="tiny material-icons">star</i><i class="tiny material-icons">star</i><i class="tiny material-icons">star</i></p>
+			          	<p>Posted: 15.11.2016</p>
+			          	<p>Location: Warsaw, Mazowieckie</p>
+			          	<p>Area: 160m<sup>2</sup></p>
+			          	<p>Owner: Dariusz Werdowski</p>
+			          	<br/>
+			          	<p class="flow-text">COSTS</p>
+			          	<p>Monthly rent: 500€</p>
+			          	<p>Media: 100€</p>
+			          	<p>Deposit: 450€</p>
+			        </div>
+			        <div class="card-action">
+			          	<a href="#">OWNER PROFILE</a>
+			        </div>
+			    </div>
+		    </div>
+		 </div>
+            
+        <!-- Footer -->
+        <footer class="page-footer cyan darken-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Liked our page?</h5>
+                        <p class="grey-text text-lighten-4">Check out some of our other projects!</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Github?</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Contributor Links?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2016 hacker:space tricity
+                    <a class="grey-text text-lighten-4 right" href="#!">Hacker:space link?</a>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+    <!-- Link to minified jQuery library-->
+    <script type="text/javascript" src="{% static 'js/jquery-3.1.0.min.js' %}"> </script>
+    <!-- Link to materialize.css javascript (must be linked after jQuery)-->
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"> </script>
+    <!-- Link to customized jS script-->
+    <script type="text/javascript" src="{% static 'js/script.js' %}"> </script>
 </html>
